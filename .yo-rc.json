@@ -1,0 +1,40 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.amp.acmeaggregator"
+    },
+    "jhipsterVersion": "6.6.0",
+    "applicationType": "gateway",
+    "baseName": "AcmeAggregator",
+    "packageName": "com.amp.acmeaggregator",
+    "packageFolder": "com/amp/acmeaggregator",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "hazelcast",
+    "enableHibernateCache": false,
+    "websocket": false,
+    "databaseType": "no",
+    "devDatabaseType": "no",
+    "prodDatabaseType": "no",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "gradle",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "NmFkYmZiYmQzODA2MmU1YjY4MGRlYjU1MTQ3Nzk3ZThhYzAxMzZmZDUwODAyZmM5NjdkNjBkZTdjNzkxMzI0ODg1MmE0MDdkNmU4NmE0ZGE1N2ZkNzZiYzAzYmRkZjE5MjA0MDZjNDE1NjA3OTQwY2I0OGVkMDlhZTAwODYxODM=",
+    "embeddableLaunchScript": false,
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "angularX",
+    "clientTheme": "materia",
+    "clientThemeVariant": "primary",
+    "creationTimestamp": 1580048145806,
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": false,
+    "blueprints": []
+  }
+}
