@@ -1,10 +1,12 @@
 <div class="row">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet"/>
+
     <div class="col-md-9">
         <h1 class="display-4">Welcome, Acme User!</h1>
-        <div>
-            <form [formGroup] = "uploadForm" (ngSubmit)="onSubmit()">
-                <div>
-                    <input type="file" name="profile" (change)="onFileSelect($event)" />
+        <div style="margin-bottom: 10px">
+            <form [formGroup]="uploadForm" (ngSubmit)="onSubmit()">
+                <div style="margin-left: 500px;" class="image-upload">
+                    <input type="file" id="buttonUploadCsv" name="profile" (change)="onFileSelect($event)">
                 </div>
                 <div>
                     <button type="submit">Upload</button>
@@ -12,28 +14,28 @@
             </form>
         </div>
     </div>
-        <table class="table table-striped">
-            <thead>
-            <tr>
-                <th>Delivery date</th>
-                <th>Product</th>
-                <th>Category</th>
-                <th>Declared Amount</th>
-                <th>Fee %</th>
-                <th>Fee amount</th>
-            </tr>
-            </thead>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Delivery date</th>
+            <th>Product</th>
+            <th>Category</th>
+            <th>Declared Amount</th>
+            <th>Fee %</th>
+            <th>Fee amount</th>
+        </tr>
+        </thead>
 
-            <tbody>
-            <tr *ngFor="let dataRow of dataRows">
-                <td>{{dataRow.deliveryDate}}</td>
-                <td>{{dataRow.product}}</td>
-                <td>{{dataRow.category}}</td>
-                <td>{{dataRow.declaredAmount}}</td>
-                <td>{{dataRow.fee}}</td>
-                <td>{{dataRow.feeAmount}}</td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
+        <tbody>
+        <tr *ngFor="let dataRow of dataRows">
+            <td>{{dataRow.deliveryDate}}</td>
+            <td>{{dataRow.product}}</td>
+            <td>{{dataRow.category}}</td>
+            <td>{{dataRow.declaredAmount}}</td>
+            <td>{{dataRow.fee}}</td>
+            <td>{{dataRow.feeAmount}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
 </div>

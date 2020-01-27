@@ -21,3 +21,13 @@ Main page styles
     background-size: contain;
   }
 }
+#buttonUploadCsv {
+  float: left;
+}
+
+.table thead th {
+  border: 0.1px solid gray;
+}
+.table tbody tr {
+  border-bottom: 2px solid #2a91eb;
+}
