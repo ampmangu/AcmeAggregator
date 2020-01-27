@@ -15,17 +15,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import retrofit2.Call;
-import retrofit2.Callback;
 import retrofit2.Response;
 
 import java.io.IOException;
-import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Collectors;
 
@@ -37,7 +33,6 @@ public class AggregatorResource {
     private final ProductEndpointService productEndpointService;
     private final FeeEndpointService feeEndpointService;
     private final DateProductEndpointService dateProductEndpointService;
-
     AggregatorResource(ProductEndpointService productEndpointService, FeeEndpointService feeEndpointService,
                        DateProductEndpointService dateProductEndpointService) {
         this.productEndpointService = productEndpointService;
@@ -51,7 +46,7 @@ public class AggregatorResource {
         ResponseEntity<List<DateProductResponse>> dates = getDates();
         ResponseEntity<List<FeeResponse>> fees = getFees();
         ResponseEntity<List<ProductResponse>> products = getProducts();
-        if (connectionsAreStablished(fees, dates, products)) {
+        if (connectionsAreEstablished(fees, dates, products)) {
             List<DateProductResponse> datesBody = dates.getBody();
             List<FeeResponse> feesBody = fees.getBody();
             List<ProductResponse> productBody = products.getBody();
@@ -86,7 +81,7 @@ public class AggregatorResource {
         return new ResponseEntity<>(dataRows, HttpStatus.OK);
     }
 
-    private boolean connectionsAreStablished(
+    private boolean connectionsAreEstablished(
         @NotNull ResponseEntity<List<FeeResponse>> fees, @NotNull ResponseEntity<List<DateProductResponse>> dates,
         @NotNull ResponseEntity<List<ProductResponse>> products) {
         return fees.getStatusCode().is2xxSuccessful() && fees.hasBody() && dates.getStatusCode().is2xxSuccessful() &&

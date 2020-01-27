@@ -1,6 +1,17 @@
 <div class="row">
     <div class="col-md-9">
         <h1 class="display-4">Welcome, Acme User!</h1>
+        <div>
+            <form [formGroup] = "uploadForm" (ngSubmit)="onSubmit()">
+                <div>
+                    <input type="file" name="profile" (change)="onFileSelect($event)" />
+                </div>
+                <div>
+                    <button type="submit">Upload</button>
+                </div>
+            </form>
+        </div>
+    </div>
         <table class="table table-striped">
             <thead>
             <tr>
